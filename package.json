@@ -4,6 +4,9 @@
   "description": "\"School project work\"",
   "main": "index.js",
   "type": "module",
+  "engines": {
+    "node": ">=16.20.1"
+  },
   "scripts": {
     "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
