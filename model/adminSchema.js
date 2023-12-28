@@ -3,7 +3,7 @@ import mongoose from "../config/smartCartDB.js";
 
 
 
-const userSchema = new mongoose.Schema(
+const adminSchema = new mongoose.Schema(
 {
     email: {
         type: String,
@@ -24,14 +24,9 @@ const userSchema = new mongoose.Schema(
         type: String,
         trim: true,
         required: true
-    },
-    cardPin: {
-        type: String,
-        trim: true,
-        required: true
     }
 })
 
-const user = new mongoose.model("user", userSchema);
+const admin = new mongoose.model("admin", adminSchema);
 
-export default user;
+export default admin;

@@ -4,14 +4,14 @@ import * as productService from "../services/productService.js";
 
 export const postProduct = async(req, res, next) => {
     try {
-        const {name, price} = req.body;
+        
+        const productValue = req.query;
 
-        if(!name || !price){
-            throw new ErrorHandler(400, "All required fields must not be empty");
+        if(!productValue){
+            responseHandler(res, null, "error");
         } else {
-            const data = {name, price};
-            await productService.saveProduct(data);
-            responseHandler(res, null, "product saved successfully");
+            
+            responseHandler(res, null, "transaction successfully");
         }
 
     } catch (err) {

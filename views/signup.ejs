@@ -1,0 +1,27 @@
+<%- include('./header') %>  
+<div class="container">
+<div class="row justify-content-md-center">
+<div class="card col-md-10">
+  <div class="card-body">
+    <h5 class="card-title">sign up</h5>
+    <form class="" action="/sign-up" method="post">
+        <div class="form-group">
+          <label>username</label>
+          <input class="form-control" type="text" name="username">
+          <label>email</label>
+          <input class="form-control" type="email" name="email">
+          <label>phone Number</label>
+          <input class="form-control" type="text" name="phoneNumber">
+          <label>card pin</label>
+          <input class="form-control" type="text" name="cardPin">
+          <label>password</label>
+          <input class="form-control" type="password" name="password">
+        </div>
+        <button class="btn btn-dark" type="submit">login</button>
+      </form>
+  </div>
+</div>
+</div>
+</div>
+<%- include('./footer') %>  
+
