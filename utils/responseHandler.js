@@ -8,7 +8,8 @@ function responseHandler( res, data, message ){
             message
         } );
         return res.json({
-            success: true
+            success: true,
+            message
         });
     }
     

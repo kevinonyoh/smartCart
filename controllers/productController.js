@@ -8,7 +8,7 @@ export const postProduct = async(req, res, next) => {
         const productValue = req.query;
 
         if(!productValue){
-            responseHandler(res, null, "error");
+           throw new ErrorHandler(400, "no product sent");
         } else {
             
             responseHandler(res, null, "transaction successfully");
