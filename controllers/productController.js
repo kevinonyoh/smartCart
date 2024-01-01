@@ -5,9 +5,12 @@ import * as productService from "../services/productService.js";
 export const postProduct = async(req, res, next) => {
     try {
         
-        const productValue = req.query;
+        const productValue = req.body;
+        const data = productValue["data"];
 
-        if(!productValue){
+        
+
+        if(!data){
            throw new ErrorHandler(400, "no product sent");
         } else {
             
