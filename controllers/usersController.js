@@ -87,9 +87,9 @@ export const postamount = async (req, res, next) => {
 
         await userServices.updateAmount(phoneNumber, total);
 
-        res.redirect(`/wallet?phoneNumber=${phoneNumber}`);
+        res.redirect(`/wallet`);
 
     } catch (err) {
-        next(err)
+        next(err) 
     }
 }
