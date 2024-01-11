@@ -16,7 +16,8 @@ Router.route("/login")
 .get(usersController.getLogin);
 
 Router.route("/wallet")
-.get(usersController.getUser);
+.get(usersController.getUser)
+.post(usersController.postamount);
 
 
 Router.route("/product")

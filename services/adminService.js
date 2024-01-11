@@ -23,3 +23,11 @@ export const findAdmin = async(data) => {
         throw new Error(err);
     }
 }
+
+export const updateAmount = async(phoneNumber, amount) => {
+    try {
+        await admin.updateOne({"phoneNumber": phoneNumber}, {"amount": amount})
+    } catch(err){
+        throw new Error(err);
+    }
+}

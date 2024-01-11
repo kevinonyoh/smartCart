@@ -1,3 +1,20 @@
 <%- include('./dashboardHeader') %>  
-
+<div class="container">
+    <div class="row justify-content-md-center">
+    <div class="card col-md-10">
+      <div class="card-body">
+        <h5 class="card-title">Deposit</h5>
+        <form class="" action="/wallet" method="post">
+            <div class="form-group">
+              <label>phone Number</label>
+              <input class="form-control" type="text" name="phoneNumber">
+              <label>amount</label>
+              <input class="form-control" type="number" name="amount">
+            </div>
+            <button class="btn btn-dark" type="submit">Deposit</button>
+          </form>
+      </div>
+    </div>
+    </div>
+    </div>
 <%- include('./dashboardFooter') %>  

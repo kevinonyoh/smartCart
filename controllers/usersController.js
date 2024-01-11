@@ -8,18 +8,18 @@ import * as userServices from "../services/userService.js";
 
 export const postUserDetails = async(req, res, next) => {
     try {
-        let {email, password, phoneNumber, username, cardPin} = req.body;
+        let {email, password, phoneNumber} = req.body;
         if(!checkEmail(email)){
             
             throw new ErrorHandler(400, "Invalid email address");
 
-        }else if(!password || !phoneNumber || !cardPin || !username){
+        }else if(!password || !phoneNumber ){
             throw new ErrorHandler(400, "All required fields must not be empty");
         }else{
             
              password = await bcrypt.hashSync(password, 10);
             console.log(password);
-            const data = {email,password,phoneNumber, username, cardPin};
+            const data = {email,password,phoneNumber};
             await userServices.saveUser(data);
 
           res.redirect('/wallet');
@@ -76,3 +76,20 @@ export const getUser = async(req, res, next) => {
     }
 }
 
+
+export const postamount = async (req, res, next) => {
+    try {
+        const {phoneNumber, amount} = req.body;
+        
+        const user = await userServices.findUser(phoneNumber);
+        
+        let total = Number(amount) + Number(user["amount"]);
+
+        await userServices.updateAmount(phoneNumber, total);
+
+        res.redirect(`/wallet?phoneNumber=${phoneNumber}`);
+
+    } catch (err) {
+        next(err)
+    }
+}

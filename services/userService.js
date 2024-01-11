@@ -23,3 +23,15 @@ export const findUser = async(data) => {
         throw new Error(err);
     }
 }
+
+export const updateAmount = async(valKey, data) => {
+    try {
+        
+        let  filter= {"phoneNumber": valKey};
+        let update = {"amount": data};
+        await user.findOneAndUpdate(filter, update);
+
+    } catch(err){
+        throw new Error(err);
+    }
+}

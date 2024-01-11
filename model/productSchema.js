@@ -3,7 +3,7 @@ import mongoose from "../config/smartCartDB.js";
 
 const productSchema = new mongoose.Schema(
     {
-        name: {
+        phoneNumber: {
             type: String,
             trim: true,
             required: true
@@ -13,8 +13,8 @@ const productSchema = new mongoose.Schema(
             trim: true,
             required: true
         },
-        quantity: {
-            type: Number,
+        product: {
+            type: Object,
             trim: true,
             required: true
         }

@@ -24,7 +24,12 @@ const adminSchema = new mongoose.Schema(
         type: String,
         trim: true,
         required: true
-    }
+    },
+    amount: {
+        type: Number,
+        trim: true,
+        default: 0  
+    } 
 })
 
 const admin = new mongoose.model("admin", adminSchema);
